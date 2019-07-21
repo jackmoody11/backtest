@@ -60,9 +60,9 @@ class Backtester:
             self.return_history[::-1].diff(periods) / self.return_history
         return (distribution.dropna() + 1)**(1/years) - 1
 
-    def plot_returns(self):
+    def plot_returns(self, label):
         self.calculate_return_history()
-        self.return_history.plot()
+        self.return_history.plot(label=label)
         plt.xlabel("Time")
         plt.ylabel("Return")
         plt.title("Historical Performance with Rebalancing")

@@ -15,7 +15,8 @@ if __name__ == "__main__":
         'sp500_adj_close': 1.0
     }
     bt = Backtester(df, allocation=a1, rebalance='m')
-    bt.plot_returns()
+    bt.plot_returns(label="Allocation 1")
     bt2 = Backtester(df, allocation=a2, rebalance='m')
-    bt2.plot_returns()
+    bt2.plot_returns(label="Allocation 2")
+    plt.legend()
     plt.show()
